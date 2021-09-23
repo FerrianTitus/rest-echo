@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+//Function untuk mengecek error yang ada pada models fetch all user or id
 func FetchAllUserOrID(c echo.Context) error {
 	result, err := models.FetchAllUserOrID(c.Param("id"))
 	if err != nil {
@@ -16,6 +17,7 @@ func FetchAllUserOrID(c echo.Context) error {
 	return c.JSON(http.StatusOK, result)
 }
 
+//Function untuk mengecek error yang ada pada models store user
 func StoreUser(c echo.Context) error {
 	username := c.FormValue("username")
 	email := c.FormValue("email")
@@ -34,6 +36,7 @@ func StoreUser(c echo.Context) error {
 	return c.JSON(http.StatusOK, result)
 }
 
+//Function untuk mengecek error yang ada pada models update user
 func UpdateUser(c echo.Context) error {
 	id := c.FormValue("id")
 	username := c.FormValue("username")
@@ -58,6 +61,7 @@ func UpdateUser(c echo.Context) error {
 	return c.JSON(http.StatusOK, result)
 }
 
+//Function untuk mengecek error yang ada pada models delete user
 func DeleteUser(c echo.Context) error {
 	id := c.FormValue("id")
 
