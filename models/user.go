@@ -13,6 +13,7 @@ type User struct {
 	Roles    int    `json:"roles"`
 }
 
+//Function untuk GET berdasarkan ID atau GET semua data pada database user
 func FetchAllUserOrID(id string) (Response, error) {
 	var obj User
 	var arrobj []User
@@ -75,6 +76,7 @@ func FetchAllUserOrID(id string) (Response, error) {
 	}
 }
 
+//Function untuk POST atau memasukkan data ke dalam database user
 func StoreUser(username string, email string, roles int) (Response, error) {
 	var res Response
 
@@ -107,6 +109,7 @@ func StoreUser(username string, email string, roles int) (Response, error) {
 	return res, nil
 }
 
+//Function untuk PUT atau mengupdate data dalam database user
 func UpdateUser(id int, username string, email string, roles int) (Response, error){
 	var res Response
 
@@ -138,6 +141,7 @@ func UpdateUser(id int, username string, email string, roles int) (Response, err
 	return res, nil
 }
 
+//Function untuk DELETE atau menghapus data dalam database user
 func DeleteUser(id int) (Response, error) {
 	var res Response
 
